@@ -1,0 +1,1 @@
+Link prezentujący aplikację:
