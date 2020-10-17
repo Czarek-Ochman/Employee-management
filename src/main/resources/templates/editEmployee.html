@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dodawanie pracownika</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="editStyle.css">
+</head>
+<body>
+<header>
+    <form method="post" th:action="@{/edytuj-pracownika}" th:object="${newEmployee}">
+        <h1>Edytuj Pracownika:</h1>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>Imie</label>
+                <input type="hidden" name="id" th:fild="*{id}" th:value="${oldEmployee.id}">
+                <input type="text" class="form-control" name="firstName"
+                       th:placeholder="${oldEmployee.person.firstName}" th:fild="*{firstName}"
+                       th:value="${oldEmployee.person.firstName}">
+            </div>
+            <div class="form-group col-md-6">
+                <label>Nazwisko</label>
+                <input type="text" class="form-control" name="lastName" th:placeholder="${oldEmployee.person.lastName}"
+                       th:fild="*{lastName}" th:value="${oldEmployee.person.lastName}">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label class="text">Wiek</label>
+                <input type="text" class="form-control widthInput" name="age" th:placeholder="${oldEmployee.person.age}"
+                       th:fild="*{age}" th:value="${oldEmployee.person.age}">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>Kraj</label>
+                <input type="text" class="form-control" name="country"
+                       th:placeholder="${oldEmployee.person.address.country}" th:fild="*{country}"
+                       th:value="${oldEmployee.person.address.country}">
+            </div>
+            <div class="form-group col-md-6">
+                <label>Miasto</label>
+                <input type="text" class="form-control" name="city" th:placeholder="${oldEmployee.person.address.city}"
+                       th:fild="*{city}" th:value="${oldEmployee.person.address.city}">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>Ulica</label>
+                <input type="text" class="form-control" name="street"
+                       th:placeholder="${oldEmployee.person.address.street}" th:fild="*{street}"
+                       th:value="${oldEmployee.person.address.street}">
+            </div>
+            <div class="form-group col-md-6">
+                <label>Kod Pocztowy</label>
+                <input type="text" class="form-control" minlength="6" maxlength="6" name="zipCode"
+                       th:placeholder="${oldEmployee.person.address.zipCode}" th:fild="*{zipCode}"
+                       th:value="${oldEmployee.person.address.zipCode}">
+            </div>
+        </div>
+        <h1>Dział:</h1>
+        <select class="form-control" th:field="*{section}" th:name="section"/>
+        <option selected="selected" th:value="${oldEmployee.section}">Pozostaw aktualny dział</option>
+        <option value="PRODUCTION">Produkcja</option>
+        <option value="SALES">Sprzedaży</option>
+        <option value="IT">It</option>
+        <option value="LABORATORY">Laboratorium</option>
+        <option value="CONTROL">Kontrolii</option>
+        </select>
+        <h1>Dodatkowa premia:</h1>
+        <select class="form-control" th:field="*{bonus}" th:name="bonus"/>
+        <option selected="selected" th:value="${oldEmployee.bonus}">Pozostaw aktualną premie</option>
+        <option value="NO_BONUS">Brak</option>
+        <option value="WASHING_CLOTHES">Pranie</option>
+        <option value="HARMFUL_PLACE">Szkodliwe warunki</option>
+        <option value="DRINK_AND_EAT">Posiłek i jedzenie</option>
+        </select>
+        <button type="submit" class="btn btn-secondary">Edytuj pracownika!</button>
+    </form>
+</header>
+</body>
+</html>

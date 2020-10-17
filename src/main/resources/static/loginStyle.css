@@ -1,0 +1,22 @@
+header {
+    background: url("https://images.pexels.com/photos/3930095/pexels-photo-3930095.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260") center;
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+}
+
+form {
+    text-align: center;
+    font-size: 30px;
+    border: 3px solid burlywood;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 300px;
+    padding: 20px;
+    color: white;
+    margin-top: -150px;
+    margin-left: -200px;
+    background: rgba(0, 0, 0, 0.5);
+}
