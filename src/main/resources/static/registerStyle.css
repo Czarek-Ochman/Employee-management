@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: url("https://images.pexels.com/photos/3930097/pexels-photo-3930097.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260") center;
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+}
+
+form {
+    text-align: center;
+    font-size: 30px;
+    border: 3px solid burlywood;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 480px;
+    padding: 20px;
+    color: white;
+    margin-top: -240px;
+    margin-left: -200px;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+button {
+    margin-top: 10px;
+    width: 350px;
+    background: burlywood;
+}
+
+.a {
+    position: absolute;
+    top: 78%;
+    left: 22px;
+    width: 348px;
+    height: 40px;
+    background: burlywood;
+}
+
+.b {
+    position: absolute;
+    top: 88%;
+    left: 22px;
+    width: 348px;
+    height: 40px;
+    background: burlywood;
+}
+
+h3 {
+    color: black;
+}

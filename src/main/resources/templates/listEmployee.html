@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="listStyle.css">
+</head>
+<body>
+<header>
+    <h1 th:text="${title}"></h1>
+    <table>
+        <thead>
+        <tr>
+            <th scope="col">Imie</th>
+            <th scope="col">Nazwisko</th>
+            <th scope="col">Wiek</th>
+            <th scope="col">Kraj</th>
+            <th scope="col">Misato</th>
+            <th scope="col">Ulica</th>
+            <th scope="col">Kod pocztowy</th>
+            <th scope="col">Dodatkowa premia</th>
+            <th scope="col">Wypłata</th>
+            <th scope="col"></th>
+            <th class="center">Opcje</th>
+        </tr>
+        </thead>
+        <tbody th:each="employee : ${allBySection}">
+        <tr>
+            <td th:text="${employee.person.firstName}"></td>
+            <td th:text="${employee.person.lastName}"></td>
+            <td th:text="${employee.person.age}"></td>
+            <td th:text="${employee.person.address.country}"></td>
+            <td th:text="${employee.person.address.city}"></td>
+            <td th:text="${employee.person.address.street}"></td>
+            <td th:text="${employee.person.address.zipCode}"></td>
+            <td th:text="${employee.bonus.getBonus()}"></td>
+            <td th:text="${employee.section.getPayment()}"></td>
+            <td><a th:href="@{'/edytuj-pracownika'(id=${employee.id})}" class="btn btn-light">Edytuj</a></td>
+            <td><a th:href="@{'/skasuj-pracownika'(id=${employee.id})}" class="btn btn-light">Usuń</a></td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="home">
+        <a href="/" class="btn btn-light">Strona główna</a>
+    </div>
+    <div class="back">
+        <a href="/panel-administratora" class="btn btn-light">Panel administratora</a>
+    </div>
+</header>
+</body>
+</html>

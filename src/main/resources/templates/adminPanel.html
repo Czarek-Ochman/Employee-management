@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel administratora</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="panelStyle.css">
+</head>
+<body>
+<header>
+    <div class="box">
+        <h1>Panel administratora</h1>
+        <a href="/dodaj-pracownika" class="btn btn-light add">Dodaj pracownika</a>
+        <a href="/" class="btn btn-light home">Strona główna</a>
+        <table>
+            <h2 class="section">Nasze działy:</h2>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Dział:</th>
+                <th scope="col">Przejdź do:</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Produkcja -></td>
+                <td><a href="/lista-pracowników-dzial?section=PRODUCTION" class="link">Wyświetl pracowników</a></td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Sprzedaży -></td>
+                <td><a href="/lista-pracowników-dzial?section=SALES" class="link">Wyświetl pracowników</a></td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>It -></td>
+                <td><a href="/lista-pracowników-dzial?section=IT" class="link">Wyświetl pracowników</a></td>
+            </tr>
+            <tr>
+                <th scope="row">4</th>
+                <td>laboratorium -></td>
+                <td><a href="/lista-pracowników-dzial?section=LABORATORY" class="link">Wyświetl pracowników</a></td>
+            </tr>
+            <tr>
+                <th scope="row">5</th>
+                <td>Kontroli -></td>
+                <td><a href="/lista-pracowników-dzial?section=CONTROL" class="link">Wyświetl pracowników</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</header>
+</body>
+</html>

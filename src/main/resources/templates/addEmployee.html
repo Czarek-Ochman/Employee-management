@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dodawanie pracownika</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="addStyle.css">
+</head>
+<body>
+<header>
+    <form method="post" th:action="@{/dodaj-pracownika}" th:object="${employeeBuilder}">
+        <h1>Dane pracownika:</h1>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>Imie</label>
+                <input type="text" class="form-control" name="firstName" th:fild="*{firstName}" placeholder="Imie"
+                       required>
+            </div>
+            <div class="form-group col-md-6">
+                <label>Nazwisko</label>
+                <input type="text" class="form-control" name="lastName" th:fild="*{lastName}" placeholder="Nazwisko"
+                       required>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label class="text">Wiek</label>
+                <input type="number" class="form-control widthInput" name="age" th:fild="*{age}" placeholder="Wiek"
+                       required>
+            </div>
+        </div>
+        <h1>Adres zamieszkania:</h1>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>Kraj</label>
+                <input type="text" class="form-control" name="country" th:fild="*{country}" placeholder="Kraj" required>
+            </div>
+            <div class="form-group col-md-6">
+                <label>Miasto</label>
+                <input type="text" class="form-control" name="city" th:fild="*{city}" placeholder="Miasto" required>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>Ulica</label>
+                <input type="text" class="form-control" name="street" th:fild="*{street}" placeholder="Ulica" required>
+            </div>
+            <div class="form-group col-md-6">
+                <label>Kod Pocztowy</label>
+                <input type="text" class="form-control" minlength="6" maxlength="6" name="zipCode" th:fild="*{zipCode}"
+                       placeholder="Kod pocztowy" required>
+            </div>
+        </div>
+        <h1>Dział:</h1>
+        <select class="form-control" th:field="*{section}" th:name="section" required/>
+        <option disabled>Działy:</option>
+        <option value="PRODUCTION">Produkcja</option>
+        <option value="SALES">Sprzedaży</option>
+        <option value="IT">It</option>
+        <option value="LABORATORY">Laboratorium</option>
+        <option value="CONTROL">Kontrolii</option>
+        </select>
+        <h1>Dodatkowa premia:</h1>
+        <select class="form-control" th:field="*{bonus}" th:name="bonus" required/>
+        <option disabled>Dodatkowe premie:</option>
+        <option value="NO_BONUS">Brak</option>
+        <option value="WASHING_CLOTHES">Pranie</option>
+        <option value="HARMFUL_PLACE">Szkodliwe warunki</option>
+        <option value="DRINK_AND_EAT">Posiłek i jedzenie</option>
+        </select>
+        <button type="submit" class="btn btn-secondary">Dodaj pracownika!</button>
+    </form>
+</header>
+</body>
+</html>

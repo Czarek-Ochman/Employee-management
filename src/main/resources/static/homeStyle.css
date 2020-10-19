@@ -1,0 +1,45 @@
+header {
+    background: url("https://images.pexels.com/photos/3785933/pexels-photo-3785933.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260") center;
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+}
+
+.admin {
+    position: absolute;
+    top: 0;
+    left: 84%;
+    border: solid burlywood;
+    height: 50px;
+    width: 270px;
+    text-align: center;
+}
+
+h3 {
+    color: burlywood;
+}
+
+h1 {
+    text-align: center;
+    font-size: 72px;
+    color: burlywood;
+}
+
+p {
+    margin-top: 15px;
+    font-size: 36px;
+    color: burlywood;
+    text-align: center;
+}
+
+h4 {
+    position: absolute;
+    top: 25%;
+    left: 85%;
+    color: burlywood;
+}
+
+.background {
+    background: rgba(0, 0, 0, 0.5);
+    height: 310px;
+}
